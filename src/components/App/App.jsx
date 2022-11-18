@@ -4,14 +4,14 @@ import { getTasks } from "redux/selectors";
 
 
 const App = () => {
-  const value = useSelector(getTasks);
+  const preValue = useSelector(getTasks);
+  const value = Object.values(preValue);  
   const dispatch = useDispatch();
-    
   
   return (
     <div>
       <ol>
-        {value.map(item=>{
+        {value.map(item=>{          
            return ( 
              <li key={item.id}> 
                <button type="button" onClick={()=>dispatch(toggleCompleted(item.id))}>{item.text}</button> 
