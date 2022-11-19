@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { persistTasksReducer } from "./tasksSlice";
 import {
   persistStore,
   FLUSH,
@@ -9,10 +8,11 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import { persistContactsReducer } from "./contactsSlice";
 
 export const store = configureStore({
   reducer: {    
-    tasks: persistTasksReducer,
+    tasks: persistContactsReducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
