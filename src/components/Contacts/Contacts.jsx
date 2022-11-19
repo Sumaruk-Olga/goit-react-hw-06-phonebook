@@ -16,15 +16,16 @@ export const Contacts = () => {
         return contacts;
       };
 
-    return (
-        <ContactsList>            
+    return (<>
+        {contacts.length>0 && <ContactsList>            
             {getVisibleContacts().map((item) => {
                 return <ContactItem key={item.id}>
                     <p>{item.name}: {item.number}</p>
                     <DeleteButton type="button" onClick={()=>dispatch(deleteContact(item.id))}>x</DeleteButton>
                 </ContactItem>
             })}
-            </ContactsList>)
+            </ContactsList>}
+            </>)
         
 }
 
