@@ -12,7 +12,7 @@ import { persistContactsReducer } from "./contactsSlice";
 
 export const store = configureStore({
   reducer: {    
-    tasks: persistContactsReducer,
+    contacts: persistContactsReducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
